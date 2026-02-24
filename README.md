@@ -36,13 +36,12 @@ This creates a **self-referential feedback loop** where:
 
 ### Installation
 
-Copy the plugin and commands into your project's `.opencode/` directory:
+Add the plugin to your project's `.opencode/opencode.json` file and restart opencode:
 
-```bash
-cp .opencode/skills/ralph-wiggum/plugins/ralph-wiggum.ts .opencode/plugins/
-cp .opencode/skills/ralph-wiggum/commands/ralph-loop.md .opencode/commands/
-cp .opencode/skills/ralph-wiggum/commands/cancel-ralph.md .opencode/commands/
-cp .opencode/skills/ralph-wiggum/commands/help.md .opencode/commands/ralph-help.md
+```json
+{
+    "plugin": ["openkit-ralph-wiggum"]
+}
 ```
 
 ### Usage

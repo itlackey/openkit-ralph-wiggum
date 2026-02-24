@@ -42,7 +42,7 @@
   },
   "scripts": {
     "build": "bun build ./index.ts --outdir ./dist --target node --format esm",
-    "build:types": "tsc --project ./tsconfig.build.json && node -e \"const fs=require('node:fs');fs.writeFileSync('dist/index.d.ts','export { plugin } from \\\"./src/plugin\\\"\\\\n');fs.writeFileSync('dist/install.d.ts','export { createInstallerPlugin, installExtensions, type InstallerOptions } from \\\"./src/install\\\"\\\\n');\"",
+    "build:types": "tsc --project ./tsconfig.build.json",
     "prepublishOnly": "npm run build && npm run build:types"
   },
   "publishConfig": {
