@@ -1,9 +1,9 @@
 {
   "name": "openkit-ralph-wiggum",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "Ralph Wiggum skill for OpenCode agents, enabling iterative task completion.",
-  "keywords": [    
+  "keywords": [
     "opencode",
     "opencode-ai",
     "opencode-plugin",
@@ -54,6 +54,6 @@
   },
   "dependencies": {
     "@opencode-ai/plugin": "^1.2.10",
-    "@itlackey/openkit": "^0.2.1"  
+    "@itlackey/openkit": "^0.2.1"
   }
 }
