@@ -1,0 +1,59 @@
+{
+  "name": "openkit-ralph-wiggum",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Ralph Wiggum skill for OpenCode agents, enabling iterative task completion.",
+  "keywords": [    
+    "opencode",
+    "opencode-ai",
+    "opencode-plugin",
+    "opencode-extensions",
+    "openkit",
+    "ai-agent",
+    "agent-framework",
+    "developer-tools",
+    "ralph-wiggum",
+    "agent",
+    "agent-loop"
+  ],
+  "homepage": "https://github.com/itlackey/openkit-ralph-wiggum#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itlackey/openkit-ralph-wiggum.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itlackey/openkit-ralph-wiggum/issues"
+  },
+  "license": "CC-BY-4.0",
+  "files": [
+    "dist",
+    "index.ts",
+    "opencode",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "bun build ./index.ts --outdir ./dist --target node --format esm",
+    "build:types": "tsc --project ./tsconfig.build.json && node -e \"const fs=require('node:fs');fs.writeFileSync('dist/index.d.ts','export { plugin } from \\\"./src/plugin\\\"\\\\n');fs.writeFileSync('dist/install.d.ts','export { createInstallerPlugin, installExtensions, type InstallerOptions } from \\\"./src/install\\\"\\\\n');\"",
+    "prepublishOnly": "npm run build && npm run build:types"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.2.10",
+    "@itlackey/openkit": "^0.2.1"  
+  }
+}
